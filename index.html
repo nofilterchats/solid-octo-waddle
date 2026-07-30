@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Filter — Straight Advice from a Real Woman</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2320241F'/%3E%3Ctext x='50' y='68' font-family='Georgia, serif' font-style='italic' font-weight='700' font-size='60' fill='%23C9A227' text-anchor='middle'%3E%E2%80%9C%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F0E6;
+    --paper-dark:#EDE5D3;
+    --ink:#20241F;
+    --ink-soft:#4A5246;
+    --brass:#96733F;
+    --sage:#525F49;
+    --gold:#B68A3B;
+    --line:#C9BFA8;
+    --white:#FFFDF8;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  a{ color:inherit; }
+  .wrap{ max-width:960px; margin:0 auto; padding:0 28px; }
+
+  /* NAV */
+  nav{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:26px 28px; max-width:960px; margin:0 auto;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{ font-family:'Fraunces', serif; font-size:20px; font-weight:600; white-space:nowrap; }
+  .brand span{ color:var(--brass); }
+  nav .links{ display:flex; gap:28px; font-size:14px; }
+  nav .links a{ text-decoration:none; color:var(--ink-soft); border-bottom:1px solid transparent; transition:border-color .2s; }
+  nav .links a:hover{ border-color:var(--brass); }
+
+  /* HERO — formal memo framing */
+  .hero{ padding:70px 0 60px; }
+  .memo{
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow: 6px 6px 0 var(--paper-dark);
+    padding:44px 48px;
+  }
+  .memo-eyebrow{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--brass); margin-bottom:22px; font-family:'IBM Plex Mono', monospace;
+  }
+  .memo-field{
+    display:flex; gap:14px; font-size:14px; padding:9px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .memo-field:last-of-type{ border-bottom:none; }
+  .memo-field .k{ width:70px; flex-shrink:0; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace; font-size:12px; padding-top:2px; text-transform:uppercase; letter-spacing:.06em;}
+  .memo-field .v{ font-size:16px; }
+  .memo h1{ font-size:30px; line-height:1.25; margin:26px 0 18px; }
+  .memo p.lede{ font-size:16px; color:var(--ink-soft); max-width:56ch; }
+  .cta-row{ display:flex; gap:16px; margin-top:30px; flex-wrap:wrap; }
+  .btn{
+    display:inline-block; padding:13px 26px; font-size:14px; font-weight:500;
+    border-radius:var(--radius); text-decoration:none; cursor:pointer; border:1px solid transparent;
+    font-family:'Inter', sans-serif;
+  }
+  .btn-primary{ background:var(--ink); color:var(--paper); }
+  .btn-primary:hover{ background:var(--sage); }
+  .btn-ghost{ border-color:var(--ink); color:var(--ink); background:transparent; }
+  .btn-ghost:hover{ background:var(--ink); color:var(--paper); }
+
+  /* SECTION LABELS */
+  .section{ padding:64px 0; border-top:1px solid var(--line); }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--brass); margin-bottom:14px;
+  }
+  .section h2{ font-size:26px; max-width:36ch; margin-bottom:10px; }
+  .section .sub{ color:var(--ink-soft); max-width:56ch; font-size:15px; }
+
+  /* CREDENTIALS */
+  .creds{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:36px; border:1px solid var(--line); }
+  .cred{ padding:26px 24px; border-right:1px solid var(--line); }
+  .cred:last-child{ border-right:none; }
+  .cred .num{ font-family:'IBM Plex Mono', monospace; color:var(--brass); font-size:13px; margin-bottom:8px; }
+  .cred .t{ font-family:'Fraunces', serif; font-size:20px; margin-bottom:6px; }
+  .cred .d{ font-size:13.5px; color:var(--ink-soft); }
+
+  /* TOPICS — folder tab styling */
+  .topics{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:36px; }
+  .topic{
+    background:var(--white); border:1px solid var(--line); position:relative;
+    padding:24px 18px 20px; min-height:150px; display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .topic::before{
+    content:attr(data-tab); position:absolute; top:-11px; left:16px;
+    background:var(--ink); color:var(--paper); font-family:'IBM Plex Mono', monospace;
+    font-size:10px; letter-spacing:.08em; padding:4px 9px; text-transform:uppercase;
+  }
+  .topic-icon{ display:block; margin-top:6px; }
+  .topic h3{ font-size:17px; margin-top:10px; }
+  .topic p{ font-size:13px; color:var(--ink-soft); margin-top:8px; }
+
+  /* HOW IT WORKS */
+  .steps{ margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+  .step .idx{ font-family:'Fraunces', serif; font-style:italic; font-size:32px; color:var(--line); margin-bottom:10px; }
+  .step h3{ font-size:16px; margin-bottom:8px; }
+  .step p{ font-size:13.5px; color:var(--ink-soft); }
+
+  /* PRICING */
+  .plans{ margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .plan{ border:1px solid var(--line); background:var(--white); padding:30px 24px; display:flex; flex-direction:column; }
+  .plan.featured{ border-color:var(--ink); position:relative; }
+  .plan.featured::before{
+    content:"Most requested"; position:absolute; top:-11px; left:24px;
+    background:var(--gold); color:var(--white); font-size:10px; letter-spacing:.08em;
+    text-transform:uppercase; padding:4px 9px; font-family:'IBM Plex Mono', monospace;
+  }
+  .plan .name{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--brass); }
+  .plan .price{ font-family:'Fraunces', serif; font-size:34px; margin:12px 0 4px; }
+  .plan .price small{ font-size:14px; color:var(--ink-soft); font-family:'Inter',sans-serif; }
+  .plan .desc{ font-size:13.5px; color:var(--ink-soft); margin-bottom:20px; flex-grow:1; }
+  .plan .btn{ text-align:center; }
+
+  /* FORM */
+  .form-box{ background:var(--white); border:1px solid var(--line); padding:40px; margin-top:36px; }
+  .form-row{ margin-bottom:18px; }
+  label{ display:block; font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); margin-bottom:7px; font-family:'IBM Plex Mono', monospace; }
+  input, select, textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--line); background:var(--paper);
+    font-family:'Inter', sans-serif; font-size:14px; color:var(--ink); border-radius:var(--radius);
+  }
+  textarea{ min-height:110px; resize:vertical; }
+  input:focus, select:focus, textarea:focus{ outline:2px solid var(--brass); outline-offset:1px; }
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+
+  footer{ padding:40px 0 60px; text-align:center; color:var(--ink-soft); font-size:13px; }
+
+  @media (max-width:760px){
+    .creds{ grid-template-columns:1fr; }
+    .cred{ border-right:none; border-bottom:1px solid var(--line); }
+    .topics{ grid-template-columns:1fr 1fr; }
+    .steps{ grid-template-columns:1fr; }
+    .plans{ grid-template-columns:1fr; }
+    .form-grid{ grid-template-columns:1fr; }
+    .memo{ padding:30px 24px; }
+    nav .links{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">No&nbsp;<span>Filter</span></div>
+  <div class="links">
+    <a href="#topics">Topics</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#book">Book</a>
+    <a href="#portal">Your room</a>
+    <a href="#ask">Ask a question</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="memo">
+      <div class="memo-eyebrow">Confidential Consultation</div>
+      <div class="memo-field"><div class="k">To</div><div class="v">You</div></div>
+      <div class="memo-field"><div class="k">From</div><div class="v">A Real Advisor, J.D. — Career, Business &amp; Negotiation Counsel</div></div>
+      <div class="memo-field"><div class="k">Re</div><div class="v">The perspective you can't get from the guys</div></div>
+      <h1>Straight advice from a real woman who has negotiated deals, closed transactions, navigated the dating world, and run projects for 30+ years.</h1>
+      <p class="lede">Ask about career, relationships, business, or negotiation. Get a considered, written answer back from a real person — not a bot, not a script. I stay unnamed here to keep this space professional and confidential for both of us.</p>
+      <div class="cta-row">
+        <a href="#ask" class="btn btn-primary">Ask your question</a>
+        <a href="#pricing" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Why written counsel</div>
+    <h2>Twenty years of reading a room, on paper.</h2>
+    <p class="sub">Every answer is written, not chatted through in real time — so you get a considered opinion, not a reflex.</p>
+    <div class="creds">
+      <div class="cred">
+        <div class="num">01</div>
+        <div class="t">J.D., Negotiation Background</div>
+        <div class="d">Legal training applied to real disputes — contracts, leverage, and what to say when it matters.</div>
+      </div>
+      <div class="cred">
+        <div class="num">02</div>
+        <div class="t">30+ Years, Real Deals</div>
+        <div class="d">Residential, commercial, and infrastructure real estate — full project lifecycles, high-stakes stakeholders.</div>
+      </div>
+      <div class="cred">
+        <div class="num">03</div>
+        <div class="t">Direct, No Filler</div>
+        <div class="d">Answers are edited for clarity, not padded for length. You get the read, not a lecture.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="topics">
+  <div class="wrap">
+    <div class="eyebrow">What to ask about</div>
+    <h2>Four case files, one desk.</h2>
+    <div class="topics">
+      <div class="topic" data-tab="File 01">
+        <div>
+          <svg class="topic-icon" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="24" width="44" height="27" rx="3" fill="none" stroke="#96733F" stroke-width="3"/><path d="M24 24 v-6 a4 4 0 0 1 4-4 h8 a4 4 0 0 1 4 4 v6" fill="none" stroke="#96733F" stroke-width="3"/><line x1="10" y1="37" x2="54" y2="37" stroke="#96733F" stroke-width="3"/><rect x="29" y="34" width="6" height="6" rx="1" fill="#96733F"/></svg>
+          <h3>Career</h3>
+          <p>Reading a manager, positioning for a raise, deciding whether to walk.</p>
+        </div>
+      </div>
+      <div class="topic" data-tab="File 02">
+        <div>
+          <svg class="topic-icon" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="12" width="32" height="21" rx="6" fill="#F5F0E6" stroke="#96733F" stroke-width="3"/><path d="M15 33 v8 l9 -8" fill="#F5F0E6" stroke="#96733F" stroke-width="3"/><rect x="24" y="31" width="32" height="21" rx="6" fill="#F5F0E6" stroke="#96733F" stroke-width="3"/><path d="M49 52 v8 l-9 -8" fill="#F5F0E6" stroke="#96733F" stroke-width="3"/></svg>
+          <h3>Relationships</h3>
+          <p>What she might actually mean, and how to say what you mean back.</p>
+        </div>
+      </div>
+      <div class="topic" data-tab="File 03">
+        <div>
+          <svg class="topic-icon" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><line x1="10" y1="54" x2="54" y2="54" stroke="#96733F" stroke-width="3" stroke-linecap="round"/><rect x="15" y="38" width="9" height="16" fill="#96733F"/><rect x="28" y="26" width="9" height="28" fill="#96733F"/><rect x="41" y="14" width="9" height="40" fill="#96733F"/></svg>
+          <h3>Business</h3>
+          <p>Partnerships, pitches, hard conversations with people you can't avoid.</p>
+        </div>
+      </div>
+      <div class="topic" data-tab="File 04">
+        <div>
+          <svg class="topic-icon" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><line x1="32" y1="8" x2="32" y2="50" stroke="#96733F" stroke-width="3" stroke-linecap="round"/><line x1="14" y1="16" x2="50" y2="16" stroke="#96733F" stroke-width="3" stroke-linecap="round"/><path d="M14 16 L7 33 a11 6 0 0 0 14 0 Z" fill="none" stroke="#96733F" stroke-width="3" stroke-linejoin="round"/><path d="M50 16 L43 33 a11 6 0 0 0 14 0 Z" fill="none" stroke="#96733F" stroke-width="3" stroke-linejoin="round"/><line x1="21" y1="50" x2="43" y2="50" stroke="#96733F" stroke-width="3" stroke-linecap="round"/></svg>
+          <h3>Negotiation</h3>
+          <p>Leverage, timing, and what to put in writing versus say out loud.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Process</div>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="idx">i.</div>
+        <h3>Submit your question</h3>
+        <p>Give real context. Vague questions get vague answers — the form asks for the details that matter.</p>
+      </div>
+      <div class="step">
+        <div class="idx">ii.</div>
+        <h3>It's reviewed and answered</h3>
+        <p>Written response, typically within 2–3 business days depending on your plan.</p>
+      </div>
+      <div class="step">
+        <div class="idx">iii.</div>
+        <h3>You get it in writing</h3>
+        <p>Delivered to your inbox — something you can actually reread before you act.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">Pricing</div>
+    <h2>Pick how you want to work together.</h2>
+    <div class="plans">
+      <div class="plan">
+        <div class="name">Single Question</div>
+        <div class="price">$50 <small>/ question</small></div>
+        <div class="desc">One written answer, one topic. Good for a specific, one-off decision.</div>
+        <a href="https://buy.stripe.com/5kQ4gB7Q449F2CAeeE4Rq02" class="btn btn-ghost">Ask one question</a>
+      </div>
+      <div class="plan featured">
+        <div class="name">Consultation Block</div>
+        <div class="price">$300 <small>/ hour</small></div>
+        <div class="desc">A full hour of deeper written back-and-forth on one situation. Best for anything with real stakes.</div>
+        <a href="https://buy.stripe.com/7sYdRbdao8pV0usb2s4Rq01" class="btn btn-primary">Book a block</a>
+      </div>
+      <div class="plan">
+        <div class="name">Monthly Access</div>
+        <div class="price">$1,000 <small>/ month</small></div>
+        <div class="desc">Unlimited standard questions across all four topics, answered on a rolling basis.</div>
+        <a href="https://buy.stripe.com/eVqfZj1rG7lR6SQ0nO4Rq00" class="btn btn-ghost">Subscribe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="book">
+  <div class="wrap">
+    <div class="eyebrow">Consultation booking</div>
+    <h2>Book your consultation block.</h2>
+    <p class="sub">After payment, pick a time here.</p>
+    <div class="form-box" style="padding:0; overflow:hidden;">
+      <iframe
+        src="https://calendly.com/bosslady-nofilterchats/30min"
+        style="width:100%; height:650px; border:none; display:block;"
+        title="Book a consultation">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="portal">
+  <div class="wrap">
+    <div class="eyebrow">After you pay</div>
+    <h2>Your private room.</h2>
+    <p class="sub">Consultation Block and Monthly Access clients get a private, one-to-one space to send follow-up messages and receive answers — just the two of you, no one else able to see or join. This is a working preview of that space below. See the implementation notes at the end of this page for how this gets connected for real clients.</p>
+    <div class="form-box" style="padding:30px;">
+      <div id="chatLog" style="min-height:220px; max-height:340px; overflow-y:auto; border:1px solid var(--line); background:var(--paper); padding:16px; margin-bottom:16px; font-size:14px;"></div>
+      <div style="display:flex; gap:10px;">
+        <input type="text" id="chatInput" placeholder="Type a message..." style="flex:1;">
+        <button id="chatSend" class="btn btn-primary" type="button">Send</button>
+      </div>
+      <p style="font-size:12px; color:var(--ink-soft); margin-top:14px;">Preview only — messages here are stored locally to this page view and are not private, saved, or delivered anywhere. Real client rooms require the backend setup described below.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ask">
+  <div class="wrap">
+    <div class="eyebrow">Get started</div>
+    <h2>Ask your question</h2>
+    <p class="sub">The more context you give, the more useful the answer. This isn't sent anywhere yet — see the note below on connecting it to payments and delivery.</p>
+    <div class="form-box">
+      <form id="askForm">
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="name">Your name</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="topic">Topic</label>
+          <select id="topic">
+            <option>Career</option>
+            <option>Relationships</option>
+            <option>Business</option>
+            <option>Negotiation</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="plan">Plan</label>
+          <select id="plan">
+            <option>Single Question — $50</option>
+            <option>Consultation Block — $300/hr</option>
+            <option>Monthly Access — $1,000/mo</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="question">Your question, with context</label>
+          <textarea id="question" required placeholder="What's going on, what have you tried, what outcome are you hoping for?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit question</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="setup-notes">
+  <div class="wrap">
+    <div class="eyebrow">Before you launch</div>
+    <h2>Three things to connect for real.</h2>
+    <div class="creds">
+      <div class="cred">
+        <div class="num">01</div>
+        <div class="t">Payments</div>
+        <div class="d">Stripe Payment Links are connected for all three pricing tiers.</div>
+      </div>
+      <div class="cred">
+        <div class="num">02</div>
+        <div class="t">Booking</div>
+        <div class="d">Calendly is connected in the booking section above.</div>
+      </div>
+      <div class="cred">
+        <div class="num">03</div>
+        <div class="t">Private rooms</div>
+        <div class="d">The chat preview above is a demo only. For real private 1:1 messaging with paying clients, see the two realistic options below.</div>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:24px;"><strong>Fastest, no-code path:</strong> after a client pays, manually send them an invite to a private Telegram group or Signal chat created just for the two of you. Free, genuinely private, and requires no development — just a few minutes per new client.</p>
+    <p class="sub" style="margin-top:12px;"><strong>Built-in, more automated path:</strong> a real in-app private chat (auto-created per client, tied to their payment) requires a backend with authentication and a database — for example Supabase or Firebase — so that each client can only see their own messages. This is a genuine development project, not a no-code afternoon task; worth planning as a phase 2 once you've validated demand with the simpler path above.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    No Filter — straight advice from a real woman on career, relationships, business &amp; negotiation.<br>
+    Advice provided is personal opinion, not legal, financial, or medical advice.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('askForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert("This form is a working front-end only. Connect it to Formspree, Airtable, or Tally (see setup notes) to actually receive submissions and take payment.");
+  });
+
+  (function(){
+    var log = document.getElementById('chatLog');
+    var input = document.getElementById('chatInput');
+    var send = document.getElementById('chatSend');
+
+    function addMessage(text, who){
+      var row = document.createElement('div');
+      row.style.marginBottom = '10px';
+      row.style.textAlign = who === 'me' ? 'right' : 'left';
+      var bubble = document.createElement('span');
+      bubble.textContent = text;
+      bubble.style.display = 'inline-block';
+      bubble.style.padding = '8px 12px';
+      bubble.style.borderRadius = '4px';
+      bubble.style.maxWidth = '75%';
+      bubble.style.background = who === 'me' ? '#20241F' : '#EDE5D3';
+      bubble.style.color = who === 'me' ? '#F5F0E6' : '#20241F';
+      row.appendChild(bubble);
+      log.appendChild(row);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    addMessage("Hi — this is your private room. Only you and your advisor can see messages here.", "them");
+
+    function sendMessage(){
+      var text = input.value.trim();
+      if(!text) return;
+      addMessage(text, 'me');
+      input.value = '';
+    }
+
+    send.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ sendMessage(); }
+    });
+  })();
+</script>
+
+</body>
+</html>
